@@ -1,0 +1,11 @@
+package com.TestRunner;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features="OHRM",glue= {"com.Steps"})
+
+
+public class Runcuke 
+{
+
+}

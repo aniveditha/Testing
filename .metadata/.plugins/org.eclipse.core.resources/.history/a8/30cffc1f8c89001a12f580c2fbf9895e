@@ -1,0 +1,37 @@
+package com.NewToursTest;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.BaseTest.BaseTest;
+import com.NewToursPages.LogInPage;
+
+public class LogInPageTest extends BaseTest
+{
+
+	LogInPage logInPage = null;
+	
+	@Test(priority=1)
+	public void signOnTest()
+	{
+		//LogInPage logInPage = new LogInPage();
+		//logInPage.signOn();
+		
+		logInPage = PageFactory.initElements(driver, LogInPage.class);
+		logInPage.signOn();
+			
+	}
+
+	@Test(priority=2)
+	public void yourDestinationTest()
+	{
+		logInPage = PageFactory.initElements(driver, LogInPage.class);
+		logInPage.yourDestination();
+		
+	}
+	
+	
+	
+	
+	
+}

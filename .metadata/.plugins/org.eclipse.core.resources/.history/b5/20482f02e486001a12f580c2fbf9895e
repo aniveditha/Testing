@@ -1,0 +1,7 @@
+<suite name="NewTours Application">
+  <test name="NewTours_Register">
+    <classes>
+      <class name="com.NewToursApplication_TestNG.Register"/>
+    </classes>
+  </test>
+</suite>

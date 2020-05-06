@@ -1,0 +1,17 @@
+package com.NewToursTest;
+
+import org.testng.annotations.Test;
+
+import com.BaseTest.BaseTest;
+
+public class LogInPageTest extends BaseTest
+{
+	
+	@Test
+	public void signOnTest()
+	{
+		
+	}
+
+	
+}

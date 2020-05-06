@@ -1,0 +1,22 @@
+package com.BaseTest;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+
+public class BaseTest 
+{
+	
+	public String url = "http://newtours.demoaut.com";
+	public WebDriver driver = null;
+	
+	@BeforeTest
+	public void setUp()
+	{
+	
+		System.setProperty("webdriver.chrome.driver", "./DriverFiles/chromdriver.exe");
+		
+	}
+
+	
+	
+}

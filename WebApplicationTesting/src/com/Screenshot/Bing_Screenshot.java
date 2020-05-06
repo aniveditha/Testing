@@ -1,0 +1,59 @@
+package com.Screenshot;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.plaf.FileChooserUI;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Bing_Screenshot 
+{
+
+	WebDriver driver = null;
+	String url="http://bing.com";
+	
+	@BeforeTest
+	public void setUp()
+	{
+	System.setProperty("webdriver.chrome.driver", "./DriverFiles/chromedriver.exe");
+	driver=new ChromeDriver();
+	
+	//driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
+	driver.get(url);
+		
+	}
+	
+	@AfterTest
+	public void tearDown()
+	{		
+		driver.quit();
+	}
+
+	@Test
+	public void captureScreenshot() throws IOException
+	{
+		File bing_Screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(bing_Screenshot, new File("./Screenshots/bing.png"));
+		 
+		
+		
+		
+		
+	}
+	
+	
+}

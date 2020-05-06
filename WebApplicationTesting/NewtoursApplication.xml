@@ -1,0 +1,18 @@
+<suite name="NewTours Application" parallel="tests">
+
+
+  <test name="NewTours_LogInTest">
+    <classes>
+      <class name="com.NewToursApplication_TestNG.NewTours_LoginTest_MultipleTestData"/>
+    </classes>
+  </test>
+
+
+
+  <test name="NewTours_Register">
+    <classes>
+      <class name="com.NewToursApplication_TestNG.Register"/>
+    </classes>
+  </test>
+  
+</suite>

@@ -1,0 +1,131 @@
+package com.OHRM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import com.BaseTest.BaseTest;
+
+public class OHRM_LonInTest extends BaseTest
+{
+	@Test(priority=1)
+	public void logInTest()
+	{
+		
+		WebElement userName=driver.findElement(By.id("txtUsername"));
+		userName.sendKeys("testing");
+
+		WebElement password=driver.findElement(By.id("txtPassword"));
+		password.sendKeys("Sele*123");
+		
+		WebElement logIn=driver.findElement(By.id("btnLogin"));
+		logIn.click();
+		
+		String expected_HompageText="Admin";
+		System.out.println("the expected HomePage Text after succesfully logIn is : "+expected_HompageText);
+		
+		WebElement welcomeAdmin=driver.findElement(By.id("welcome"));
+		String actual_HomePageText=welcomeAdmin.getText();
+		System.out.println("The actual HomeOage welcome Text is :"+actual_HomePageText);
+		
+		if(actual_HomePageText.contains(expected_HompageText))
+		{
+			System.out.println("Logged in Succesfully - PASS");
+			
+		}
+		else
+		{
+			System.out.println("Login Failed - FAIL");
+			
+		}
+	}
+	
+	@Test(priority=2)
+	public void pim()
+	{
+		WebElement pim=driver.findElement(By.linkText("PIM"));
+		Actions action = new Actions(driver);
+		action.moveToElement(pim).perform();
+		
+		WebElement addEmployee=driver.findElement(By.linkText("Add Employee"));
+		addEmployee.click();
+		
+		String expected_addEmployeeText="add";
+		System.out.println("The expected Text diaplayed in Add Employee tab is :"+expected_addEmployeeText);
+		
+		WebElement addEmployeeText=driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/h1"));
+		String actual_addEmployeeText=addEmployee.getText();
+		System.out.println("The actual Text displayed in AddEmployee Tab is :"+actual_addEmployeeText);
+		
+		if(actual_addEmployeeText.contains(expected_addEmployeeText))
+		{
+			System.out.println("Successfully Navigated to Add Employee Page - PASS");
+			
+		}
+		else
+		{
+			System.out.println("Failed to Navigate to Add Employee Page - FAIL");
+		}
+		
+	}
+		
+	@Test(priority=3)
+	public void addEmployee()
+	{
+		WebElement firstName=driver.findElement(By.id("firstName"));
+		firstName.sendKeys("Veena");
+		
+		WebElement middleName=driver.findElement(By.id("middleName"));
+		middleName.sendKeys("Kumari");
+		
+		WebElement lastName=driver.findElement(By.id("lastName"));
+		lastName.sendKeys("Patlu");
+		
+		WebElement employeeId=driver.findElement(By.id("employeeId"));
+		String expected_employeeIdNum=employeeId.getAttribute("value");
+		
+		WebElement save=driver.findElement(By.id("btnSave"));
+		save.click();
+		
+		String expected_firstName="Veena";
+		System.out.println("The expected firstName is :"+expected_firstName);
+		
+		String expected_perDetailsText="Personal";
+		System.out.println("The expected text after successfully navigated to the personal details page is :"+expected_perDetailsText);
+		
+		WebElement personalDetails=driver.findElement(By.xpath("//*[@id=\"pdMainContainer\"]/div[1]/h1"));
+		String actual_perDetailsText=personalDetails.getText();
+		System.out.println();
+		
+		}
+		
+		
+		
+		
+	}
+	
+	@Test
+	public void personalDetails()
+	{
+		
+		WebElement empFirstName=driver.findElement(By.id("personal_txtEmpFirstName"));
+		String actual_empFirstName=empFirstName.getAttribute("value");
+		
+			
+		WebElement employeeFullName=driver.findElement(By.xpath("//*[@id=\"profile-pic\"]/h1"));
+		String actual_employeeFullName=employeeFullName.getText();
+		
+		if(actual_employeeFullName.contains(expected_firstName))
+		{
+			System.out.println("The Employee's name is added successfully - PASS ");
+		}
+		else
+		{
+			System.out.println("Failed to add the Employee Name - FAIL");
+		WebElement regEmployeeID=driver.findElement(By.id("personal_txtEmployeeId"));
+		String actual_employeeId=regEmployeeID.getAttribute("value");
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+Feature: OrangeHRM Application Login Functionality
+
+Scenario: Validating OrangeHRM Application LogIn Functionality
+
+ Given Navigate to OrangeHRM Application
+ When User enters UserName
+ Then User enters Password
+ Then User performs click operation on logIn button
+ Then User should be able to successfully login to the applicaiton and close the application
+ 

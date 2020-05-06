@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.BasicJava.MultiplicationTable_A_1503&apos; to &apos;A_1503_MultiplicationTable&apos;&#x0D;&#x0A;- Original project: &apos;WebApplicationTesting&apos;&#x0D;&#x0A;- Original element: &apos;com.BasicJava.MultiplicationTable_A_1503&apos;&#x0D;&#x0A;- Renamed element: &apos;com.BasicJava.A_1503_MultiplicationTable&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MultiplicationTable_A_1503&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.BasicJava{MultiplicationTable_A_1503.java[MultiplicationTable_A_1503" matchStrategy="1" name="A_1503_MultiplicationTable" qualified="false" references="true" similarDeclarations="false" stamp="1584274074116" textual="false" version="1.0"/>
+</session>

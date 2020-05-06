@@ -1,0 +1,14 @@
+package com.BaseTest;
+
+public class BaseTest 
+{
+	
+	@BeforeTest
+	public void setUp()
+	{
+		
+	}
+
+	
+	
+}
